@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "start:dev": "npx nodemon ./src/fileserver.ts",
-    "start:prod": "node ./dist/fileserver.js",
+    "start:prod": "tsc && node ./dist/fileserver.js",
     "build": "tsc",
     "lint": "eslint . --ext .ts"
   },
