@@ -1,0 +1,114 @@
+{
+	"info": {
+		"_postman_id": "d11136bc-1016-48cd-82f5-492aa770d30a",
+		"name": "Fileserver",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14631685"
+	},
+	"item": [
+		{
+			"name": "files",
+			"item": [
+				{
+					"name": "GET TotalSpaceUsed",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/files/space",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"files",
+								"space"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DOWNLOAD File",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/files/:filename",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"files",
+								":filename"
+							],
+							"variable": [
+								{
+									"key": "filename",
+									"value": "3.pdf"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPLOAD FILE",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "file",
+							"file": {
+								"src": "/Users/orice87/Desktop/CECOLO/P2000_MSSQL.pdf"
+							}
+						},
+						"url": {
+							"raw": "{{host}}/files/:filename",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"files",
+								":filename"
+							],
+							"variable": [
+								{
+									"key": "filename",
+									"value": "šěěěš_dada.adad.\"\"       \"dwaawd "
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "http://localhost:4444",
+			"type": "string"
+		}
+	]
+}
